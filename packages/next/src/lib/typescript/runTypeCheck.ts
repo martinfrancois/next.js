@@ -221,7 +221,7 @@ export async function runTypeCheck(
     )
 
   return {
-    hasWarnings: true,
+    hasWarnings: !!warnings?.length,
     warnings,
     inputFilesCount: fileNames.length,
     totalFilesCount: program.getSourceFiles().length,
