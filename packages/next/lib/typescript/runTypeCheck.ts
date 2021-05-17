@@ -95,7 +95,7 @@ export async function runTypeCheck(
       .map((d) => getFormattedDiagnostic(ts, baseDir, d))
   )
   return {
-    hasWarnings: true,
+    hasWarnings: !!warnings?.length,
     warnings,
     inputFilesCount: effectiveConfiguration.fileNames.length,
     totalFilesCount: program.getSourceFiles().length,
